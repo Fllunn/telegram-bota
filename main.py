@@ -200,7 +200,7 @@ def send_quiz(user_id):
             new_round = [q for q in context["all_questions"] if q.get("correct_count", 0) < 2]  # Неосвоенные вопросы
 
         if new_round:
-            random.shuffle(new_round)  # 🔥 Перемешиваем новый круг
+            random.shuffle(new_round)  # Перемешиваем новый круг
             context["current_round_questions"] = new_round
             bot.send_message(user_id, f"🔄 Начинается {context['round_number']} круг викторины.")
         else:
